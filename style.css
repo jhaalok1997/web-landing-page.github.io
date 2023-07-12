@@ -1,0 +1,350 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+html body{
+    height: 100%;
+    perspective: 800px;
+    width: 100%;
+}
+
+#nav{
+    height:70px;
+    width:100%;
+    /*background-color: #0b0606;*/
+    color:rgb(32, 42, 42);
+    display: flex;
+    gap: 80px;
+    position:fixed;
+    align-items: center;
+    padding:0 190px;
+    justify-content:flex-start;
+    z-index: 99;
+    font-weight: 900;
+    font-size: 16px;
+}
+
+#cursor{
+    height:20px;
+    width:20px;
+    position:fixed;
+    border-radius: 50%;
+    background-color: rgb(188, 226, 17);
+    z-index: 99;
+}
+
+#cursur-blur{
+    height:200px;
+    width:200px;
+    position:fixed;
+    border-radius: 50%;
+    background-color: rgba(211, 230, 124, 0.374);
+    filter:blur(10px);
+    z-index: 29;
+    
+}
+
+video{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    position:fixed;
+    z-index: -1px;
+}
+
+#main{
+   position:relative;
+   background-color:rgba(0, 0, 0, 0.582);
+}
+
+#page1{
+    height: 100vh;
+    width:100%;
+    position:relative;
+   /* background-color: #a82222;*/
+   display:flex;
+   align-items: center;
+   justify-content:center;
+   flex-direction:column;
+   text-align: center;
+   z-index: 9;
+
+}
+
+#page1 h1{
+    font-size: 100px;
+    color:rgb(12, 12, 12);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 30px;
+    position:relative;
+}
+
+#page1 h1::before{
+    content:"FEEL. BRAVE. MOTIVATED.";
+    position:absolute;
+    color:rgb(247, 237, 237);
+    top:-8px;
+    left:-8px;
+    -webkit-text-stroke: 2px blue;
+}
+
+#page1 p{
+    font-size: 20px;
+    font-style: italic;
+    font-family: serif;
+    font-weight: bolder;
+    margin:70px;
+    color:rgba(0, 0, 0, 0.582)(141, 200, 14);
+}
+
+#page2{
+    height:110vh;
+    width:100%;
+    z-index: 10;
+}
+
+#scroller{
+    /*background-color: #fff;*/
+    white-space: nowrap;
+    overflow-y:hidden ;
+    overflow-x: auto;
+    position:relative;
+    z-index: inherit;
+}
+
+#scroller::-webkit-scrollbar{
+    display:none;
+}
+
+#scroller-in{
+    display:inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count:infinite ;
+}
+
+
+#scroller h4{
+    display:inline-block;
+    font-size: 80px;
+    font-weight: 800;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: transparent;
+    transition: all linear 0.5s;
+    margin-right: 40px;
+    -webkit-text-stroke: 2px silver;
+
+}
+
+#scroller h4:hover{
+    color:#000;
+}
+
+@keyframes scroll {
+    from{
+        transform: translateX(0)
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#about-us{
+    height:40vh;
+    width:100%;
+    background-color:transparent;
+    padding:0 50px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+#about-us img{
+    height: 210px;
+    width: 200px;
+    border-radius: 15px;
+    object-fit:cover;
+}
+
+#about-us-in{
+    width:60%;
+    text-align: center;
+    color:antiquewhite;
+
+}
+
+#about-us-in h3{
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+#about-us-in p{
+    font-style: italic;
+    font-size: 21px;
+    line-height: 28px;
+    margin-top: 40px;
+}
+
+#card-container{
+    background-color:transparent;
+    height:60vh;
+    display:flex;
+    justify-content:center;
+    text-align: center;
+    gap:70px;
+    margin-top: 30px;
+}
+
+.card{
+    height:80%;
+    width:21%;
+    background-color:transparent;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.7s;
+}
+
+#card1{
+    background-image: url("./images/mountain\ goat.jpg");
+}
+
+#card2{
+    background-image: url("./images/pexels-beast-brother-at\ bullet.jpg");
+    
+}
+
+#card3{
+    background-image: url("./images/pexels-ranjan-simkhada-2403599.jpg");
+}
+
+.overlay{
+    height:100%;
+    width:100%;
+    background-color: #d7e9ce;
+    border-radius: 20px;
+    padding-top: 80px;
+    padding:30px;
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+
+.overlay h4{
+    color:rgb(10, 8, 8);
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 20px;
+    font-weight: 800;
+    
+}
+
+.overlay p{
+    color:rgb(6, 5, 5)
+    font 16px;
+    
+}
+
+.card:hover .overlay{
+    opacity: 1;
+
+}
+
+.card:hover{
+    transform: rotate3d(-1,1,0,29deg);
+}
+
+#page3{
+    height:40vh;
+    width: 100%;
+    background-color:transparent;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+#page3>p{
+    font-size: 25px;
+    font-family: caveat;
+    color: aliceblue;
+    font-style: italic;
+    font-weight: 700;
+    width:77%;
+    text-align: center;
+    line-height: 45px;
+    margin-bottom: 80px;
+
+}
+
+#footer{
+    height:30vh;
+    width:100%;
+    background: linear-gradient(to left bottom,#7f56f1,#e73c3c);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6.5vw;
+    padding: 0 100px;
+}
+
+#footer > img {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+}
+
+#f1 img {
+    height: 130px;
+    border-top-right-radius: 65px;
+    border-top-left-radius: 65px;
+  }
+  #f1,
+  #f2,
+  #f3,
+  #f4 {
+    width: fit-content;
+    position: relative;
+    z-index: 99;
+    /* background-color: red; */
+  }
+
+  #f2 h3 {
+    font-size: 1.7vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    margin-bottom: 5px;
+  }
+  
+  #f3 h3 {
+    font-size: 1.7vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  #f4 h4 {
+    font-size: 1vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
